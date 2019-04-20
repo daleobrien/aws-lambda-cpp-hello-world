@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  lambda_builder:
+    container_name: aws_cpp_lambda_function_builder
+    build:
+      context: .
+      dockerfile: scripts/Dockerfile
+
+    volumes:
+      - ./src:/working-folder/src
+      - ./build:/working-folder/build
+      - ./scripts/build.sh:/working-folder/scripts/build.sh
+
+    command: /bin/bash /working-folder/scripts/build.sh
