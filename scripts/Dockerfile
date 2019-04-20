@@ -28,8 +28,6 @@ RUN \
   cmake -j $cpus .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF && \ 
   make -j $cpus && make install -j $cpus
 
-# -DCMAKE_INSTALL_PREFIX=~/aws-lambda-cpp 
-
 RUN pip-3.6 install --upgrade pip
 
 # This is where we will build our source
